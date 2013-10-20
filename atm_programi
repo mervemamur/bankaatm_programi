@@ -1,0 +1,65 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	int hesapno=111;
+	printf("Hesap numarasini  girin	:");
+	scanf("%d",&hesapno);
+	int sifre=1234;
+	printf("Sifreyi girin	:");
+	scanf("%d",&sifre);
+	if (hesapno==111 && sifre==1234)
+	{
+		printf("ATM sistemine hosgeldiniz...\n");
+		printf(" 1 Hesap Bilgisi\n 2 Para Cekme\n 3 Para Yatirma \n 4 Para Gonderme \n ");
+		printf("Tercihinizi girin 1-2-3-4	:");
+		int tercih;
+		scanf("%d",&tercih);
+		switch(tercih)
+		{
+		case 1:
+			printf("Para miktari=500 \n");
+			break;
+		case 2:
+			int cekilen_para;
+			printf("Cekmek istediginiz miktari girin	:");
+			scanf("%d",&cekilen_para);
+			if(cekilen_para<=500)
+			{
+				int kalan_bakiye=500-cekilen_para;
+				printf("Kalan bakiyeniz	%d:\n",kalan_bakiye);
+			}
+			else
+			{printf("En fazla hesabinizdaki kadar para cekebilirsiniz!\n");}
+			break;
+		case 3:
+			int yatirilan_para;
+			printf("Yatirmak istediginiz miktari yazin	:");
+			scanf("%d",&yatirilan_para);
+			int eklenmis_para;
+			eklenmis_para=500+yatirilan_para;
+			printf("Yatirma isleminiz basarili.Hesaptaki para:%d \n",eklenmis_para);
+			break;
+		case 4:
+			printf("222 hesap numarasina para gondermek icin entere basin\n");
+			int gonderilen;
+			printf("Gondermek istediginiz miktari girin	:");
+			scanf("%d",&gonderilen);
+			if(gonderilen<=500)
+				{
+					int kalanbakiye=500-gonderilen;
+					printf("Para gonderme islemi basarili.Kalan bakiyeniz	:%d \n",kalanbakiye);
+				}
+			else 
+				printf("Hesabinizda yeterli bakiye yok...\n");
+			break;
+		default:
+			printf("1-2-3-4 disinde bir sayi girdiniz.Programi tekrar calistirin.\n");
+			break;
+		}
+
+	}
+	else
+	{printf("Hatali giris...");}
+
+}
